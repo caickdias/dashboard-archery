@@ -1,12 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Login from './components/pages/Login';
+
+import { AppProvider } from './context/App/Provider';
 
 function App() {
+
   return (
-    <div className="App">
-      Teste
-    </div>
+    <AppProvider>
+      <Login />
+    </AppProvider>
   );
 }
 
