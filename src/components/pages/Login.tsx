@@ -5,6 +5,10 @@ import LoginForm from '../forms/LoginForm';
 
 const Login = () => {
   
+    const onSubmit = (data: string) => {
+        console.log(data);
+    }
+
     return (
         <div className='flex'>         
             <div className={`flex flex-col w-1/2 h-screen text-white items-center justify-center bg-primaryBg`}>
@@ -19,11 +23,11 @@ const Login = () => {
             
             <div className={`flex w-1/2 h-screen flex-col items-center justify-center bg-greyBg`}>
                 
-                <div className='flex flex-1 items-center'>
+                <div className='flex flex-1 items-end'>
                     <img className=' h-20'  src={LogoImage} alt='opa' />
                 </div>
 
-                <LoginForm />
+                <LoginForm onSubmit={onSubmit} />
 
                 <div className='flex flex-1'>
                 </div>
