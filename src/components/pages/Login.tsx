@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
 
 import LogoImage from '../../assets/logo.png';
 import LoginForm from '../forms/LoginForm';
 
+import { login } from '../../services/api';
+
 const Login = () => {
   
-    const onSubmit = (data: string) => {
-        console.log(data);
+    const onSubmit = async (data: string) => {
+        const response = await login(data);
+        if(response.success == true){
+            alert('logou')
+        }
     }
 
     return (

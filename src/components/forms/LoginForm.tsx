@@ -25,6 +25,7 @@ const LoginForm = ({ onSubmit }: Props) => {
           {...register('username', { required: true })} 
           placeholder="Username" />
         </label>
+        
         {errors.username && 
         <p className='text-red-500 text-sm'>Username is required</p>
         }
