@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import AppContext from '../../context/App/Context';
 
 import LogoImage from '../../assets/logo.png';
 import LoginForm from '../forms/LoginForm';
 
-import { login } from '../../services/api';
+import { Navigate } from 'react-router-dom';
+import { Login as APILogin } from '../../services/api';
 
 const Login = () => {
   
+    const { token, setToken } = useContext<any>(AppContext);
+
     const onSubmit = async (data: string) => {
-        const response = await login(data);
-        if(response.success == true){
-            alert('logou')
+        
+        const response = await APILogin(data);
+        
+        if(response.success === true){            
+            setToken('fakeToken');            
         }
+    }
+
+    if(token !== ''){
+        return <Navigate to='/' />
     }
 
     return (

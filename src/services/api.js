@@ -1,6 +1,6 @@
 const BASE_URL = 'https://localhost:8000/api';
 
-const login = async (credentials) => {
+const Login = async (credentials) => {
     
     const { username: user, password } = JSON.parse(credentials);
 
@@ -15,5 +15,5 @@ const login = async (credentials) => {
 }
 
 export {
-    login,
+    Login,
 }
