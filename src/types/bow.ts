@@ -1,4 +1,5 @@
 export type Bow = {
+    _id: string;
     type: string;
     length: number;
     drawWeight: number;

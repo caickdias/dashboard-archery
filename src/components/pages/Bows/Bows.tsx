@@ -1,32 +1,44 @@
 import React, { useState, useEffect } from 'react'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 import { Bow } from '../../../types/bow';
 import { GetAllBows } from '../../../services/api/bow'
 
+const queryClient = new QueryClient();
+
+
+
 const Bows = () => {
 
-    const [bows, setBows] = useState<Bow[]>();
-    const [loading, setLoading] = useState(true);
+    return(
+        <QueryClientProvider client={queryClient}>
+            <Page />
+        </QueryClientProvider>
+    )
+}
+const Page = () => {
+    const { isLoading, error, data: bows } = useQuery(['bowsData'], GetAllBows)
 
-    useEffect(() => {
-        GetAllBows()
-        .then((res) => {
-            setBows(res);
-            setLoading(false);
-        });
-    }, []);
 
-    if(loading){
+    if(isLoading){
         return (
             <div>Bows</div>
         )
     }
 
-    return(
-        <div className='flex flex-1 flex-col p-4'>            
+    if(error){
+        return (
+            <div>Error!</div>
+        )
+    }   
+    return (
+        <div className='flex flex-1 flex-col p-4'>              
         {
             bows?.map((bow: Bow) => (
-                <div className='flex justify-between'>
+                <div 
+                    key={bow['_id']} 
+                    className='flex justify-between'
+                >
                     <span>{bow.type}</span>
                     <span>{bow.braceHeight}</span>
                     <span>{bow.brand}</span>
@@ -40,5 +52,4 @@ const Bows = () => {
         </div>
     )
 }
-
 export default Bows
