@@ -55,7 +55,7 @@ const menuItems = [
         icon: <AiOutlineTeam />
     },
     {
-        name: 'Financeiro',
+        name: 'Finances',
         path: 'finances',
         subitems: [
             {

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import AppContext from '../../context/App/Context';
 
@@ -6,7 +6,7 @@ import LogoImage from '../../assets/logo.png';
 import LoginForm from '../forms/LoginForm';
 
 import { Navigate } from 'react-router-dom';
-import { Login as APILogin } from '../../services/api';
+import { Login as APILogin } from '../../services/api/auth';
 
 const Login = () => {
   

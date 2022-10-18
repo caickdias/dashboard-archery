@@ -5,6 +5,7 @@ import AppContext from '../context/App/Context';
 
 import Sidebar from '../components/Sidebar/Sidebar';
 import Home from '../components/pages/Home';
+import Bows from '../components/pages/Bows/Bows';
 
 const PrivateRoutes = () => {
 
@@ -19,6 +20,7 @@ const PrivateRoutes = () => {
             <div className='flex flex-1 bg-zinc-300'>
                 <Routes>
                     <Route element={<Home />} path="/" />
+                    <Route element={<Bows />} path="/bows" />
                     <Route element={<Home />} path="*" />
                 </Routes>
             </div>

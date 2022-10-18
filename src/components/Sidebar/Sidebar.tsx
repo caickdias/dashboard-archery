@@ -70,18 +70,6 @@ const Sidebar = () => {
           )
         })
       }
-
-      <div className='flex justify-end p-4'>
-          <button 
-              className='flex text-xs opacity-60 hover:opacity-100 align-top'
-              onClick={() => {
-                setToken(null);
-                
-              }}
-          >
-              Logout
-          </button>
-      </div>
         
     </div>
   )
