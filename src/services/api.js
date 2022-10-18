@@ -1,10 +1,10 @@
-const BASE_URL = 'https://localhost:8000/api';
+const BASE_URL = 'http://localhost:8000/api';
 
 const Login = async (credentials) => {
     
     const { username: user, password } = JSON.parse(credentials);
 
-    let req = await fetch('http://localhost:8000/api/login', {
+    let req = await fetch(`${BASE_URL}/login`, {
         headers: {
             'Content-Type': 'application/json',
         }, 

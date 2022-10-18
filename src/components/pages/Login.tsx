@@ -26,7 +26,7 @@ const Login = () => {
     }
 
     return (
-        <div className='flex'>         
+        <div className='flex flex-1'>         
             <div className={`flex flex-col w-1/2 h-screen text-white items-center justify-center bg-primaryBg`}>
                 <h1 className='text-5xl mb-4'>
                     A D M I N
