@@ -7,7 +7,7 @@ import {
     AiOutlineSetting,
 } from 'react-icons/ai';
 
-const items = [
+const menuItems = [
     {
         name: 'Home',
         path: '',
@@ -26,15 +26,15 @@ const items = [
         subitems: [
             {
                 name: 'Bows',
-                path: 'inventory'
+                path: 'bows'
             },
             {
                 name: 'Arrows',
-                path: 'addItem'
+                path: 'arrows'
             },
             {
                 name: 'Other',
-                path: 'addItem'
+                path: 'other'
             },
         ],
         icon: <AiOutlineTool />
@@ -77,4 +77,4 @@ const items = [
     },
 ]
 
-export default items;
+export default menuItems;
