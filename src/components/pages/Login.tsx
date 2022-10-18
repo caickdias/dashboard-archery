@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import AppContext from '../../context/App/Context';
 
@@ -12,8 +12,7 @@ const Login = () => {
   
     const { token, setToken } = useContext<any>(AppContext);
 
-    const onSubmit = async (data: string) => {
-        
+    const onSubmit = async (data: string) => {       
         const response = await APILogin(data);
         
         if(response.success === true){            

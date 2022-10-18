@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Navigate } from 'react-router-dom';
 
 import menuItems from '../../data/sidebar';
 import Title from './Title';

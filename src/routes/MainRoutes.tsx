@@ -7,29 +7,15 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import Home from '../components/pages/Home';
 import Login from '../components/pages/Login';
 import PrivateRoutes from './PrivateRoutes';
+import PublicRoutes from './PublicRoutes';
 
 const MainRoutes = () => {
     
     const { token } = useContext<any>(AppContext);
  
     return (
-        <Router>
-            <div className='flex flex-row'>
-            
-                { token !== '' && <Sidebar />}
-            
-                <div className='flex flex-1 bg-zinc-300'>
-                    <Routes>
-                        <Route element={<PrivateRoutes />}>
-                            <Route element={<Home />} path="/" />
-
-                        </Route>
-
-                        <Route element={<Login />} path="/login" />                
-                        <Route element={<Login />} path="*" />                
-                    </Routes>
-                </div>
-            </div>
+        <Router>            
+            { token !== '' ? <PrivateRoutes /> : <PublicRoutes />}            
         </Router>
     )
 }
