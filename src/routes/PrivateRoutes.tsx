@@ -6,6 +6,7 @@ import AppContext from '../context/App/Context';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Home from '../components/pages/Home';
 import Bows from '../components/pages/Bows/Bows';
+import NotFound from '../components/pages/NotFound';
 
 const PrivateRoutes = () => {
 
@@ -21,7 +22,7 @@ const PrivateRoutes = () => {
                 <Routes>
                     <Route element={<Home />} path="/" />
                     <Route element={<Bows />} path="/bows" />
-                    <Route element={<Home />} path="*" />
+                    <Route element={<NotFound />} path="*" />
                 </Routes>
             </div>
         </div>

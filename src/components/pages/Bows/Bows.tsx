@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 import { Bow } from '../../../types/bow';
 import { GetAllBows } from '../../../services/api/bow'
 
 const queryClient = new QueryClient();
-
-
 
 const Bows = () => {
 
@@ -16,13 +14,14 @@ const Bows = () => {
         </QueryClientProvider>
     )
 }
-const Page = () => {
-    const { isLoading, error, data: bows } = useQuery(['bowsData'], GetAllBows)
 
+const Page = () => {
+
+    const { isLoading, error, data: bows } = useQuery(['bowsData'], GetAllBows)
 
     if(isLoading){
         return (
-            <div>Bows</div>
+            <div>Loading</div>
         )
     }
 
