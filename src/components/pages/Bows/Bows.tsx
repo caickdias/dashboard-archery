@@ -2,7 +2,8 @@ import React from 'react'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 import { Bow } from '../../../types/bow';
-import { GetAllBows } from '../../../services/api/bow'
+import BowInfo from './BowInfo';
+import { GetAllBows, DeleteBow } from '../../../services/api/bow'
 
 const queryClient = new QueryClient();
 
@@ -17,35 +18,30 @@ const Bows = () => {
 
 const Page = () => {
 
-    const { isLoading, error, data: bows } = useQuery(['bowsData'], GetAllBows)
+    const { isLoading, error, data: bows, refetch } = useQuery(['bowsData'], GetAllBows)
+
+    const handleDeleteBow = async (id: string) => {
+        await DeleteBow(id);
+        refetch();
+    }
 
     if(isLoading){
-        return (
-            <div>Loading</div>
-        )
+        return <div>Loading</div>
     }
 
     if(error){
-        return (
-            <div>Error!</div>
-        )
+        return <div>Error!</div>
     }   
+    
     return (
         <div className='flex flex-1 flex-col p-4'>              
         {
             bows?.map((bow: Bow) => (
-                <div 
+                <BowInfo 
                     key={bow['_id']} 
-                    className='flex justify-between'
-                >
-                    <span>{bow.type}</span>
-                    <span>{bow.braceHeight}</span>
-                    <span>{bow.brand}</span>
-                    <span>{bow.drawWeight}</span>
-                    <span>{bow.hand}</span>
-                    <span>{bow.length}</span>
-                    <span>{bow.modelName}</span>
-                </div>
+                    onDelete={handleDeleteBow}
+                    bow={bow} 
+                />    
             ))
         }                        
         </div>

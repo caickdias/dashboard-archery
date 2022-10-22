@@ -4,7 +4,7 @@ const Login = async (credentials) => {
     
     const { username: user, password } = JSON.parse(credentials);
 
-    let req = await fetch(`${BASE_URL}/login`, {
+    let req = await fetch(`${BASE_URL}/auth/login`, {
         headers: {
             'Content-Type': 'application/json',
         }, 
