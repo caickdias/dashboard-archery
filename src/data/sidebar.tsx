@@ -23,20 +23,7 @@ const menuItems = [
     {
         name: 'Inventory',
         path: 'inventory',
-        subitems: [
-            {
-                name: 'Bows',
-                path: 'bows'
-            },
-            {
-                name: 'Arrows',
-                path: 'arrows'
-            },
-            {
-                name: 'Other',
-                path: 'other'
-            },
-        ],
+        subitems: [],
         icon: <AiOutlineTool />
     },
     {

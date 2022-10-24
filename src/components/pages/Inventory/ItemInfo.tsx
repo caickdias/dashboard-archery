@@ -7,7 +7,7 @@ type Props = {
     onDelete: (id: string) => void;
 }
 
-const BowInfo = ({ bow, onDelete }: Props) => {
+const ItemInfo = ({ bow, onDelete }: Props) => {
   return (
     <div                     
         className='flex justify-between'
@@ -29,4 +29,4 @@ const BowInfo = ({ bow, onDelete }: Props) => {
   )
 }
 
-export default BowInfo
+export default ItemInfo

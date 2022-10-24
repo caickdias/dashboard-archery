@@ -2,7 +2,7 @@ import React from 'react'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 import { Bow } from '../../../types/bow';
-import BowInfo from './BowInfo';
+import ItemInfo from './ItemInfo';
 import { GetAllBows, DeleteBow } from '../../../services/api/bow'
 
 const queryClient = new QueryClient();
@@ -34,10 +34,10 @@ const Page = () => {
     }   
     
     return (
-        <div className='flex flex-1 flex-col p-4'>              
+        <div className='flex flex-1 flex-col p-4'>    
         {
             bows?.map((bow: Bow) => (
-                <BowInfo 
+                <ItemInfo 
                     key={bow['_id']} 
                     onDelete={handleDeleteBow}
                     bow={bow} 
