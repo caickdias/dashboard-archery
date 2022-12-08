@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useAuth0 } from '@auth0/auth0-react'; 
 
 import AppContext from '../../context/App/Context';
 
@@ -11,6 +12,7 @@ import { Login as APILogin } from '../../services/api/auth';
 const Login = () => {
   
     const { token, setToken } = useContext<any>(AppContext);
+    const { loginWithRedirect } = useAuth0();
 
     const onSubmit = async (data: string) => {       
         const response = await APILogin(data);
@@ -42,7 +44,7 @@ const Login = () => {
                     <img className=' h-20'  src={LogoImage} alt='opa' />
                 </div>
 
-                <LoginForm onSubmit={onSubmit} />
+                <button onClick={() => loginWithRedirect()}>Log In</button>
 
                 <div className='flex flex-1'>
                 </div>

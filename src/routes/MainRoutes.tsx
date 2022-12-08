@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom'
 
 import AppContext from '../context/App/Context';
 
-import Sidebar from '../components/Sidebar/Sidebar';
+import Sidebar from '../components/Sidebar';
 import Home from '../components/pages/Home';
 import Login from '../components/pages/Login';
 import PrivateRoutes from './PrivateRoutes';

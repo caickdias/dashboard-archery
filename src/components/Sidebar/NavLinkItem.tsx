@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-import { MenuItemProps } from './Sidebar';
+import { MenuItemProps } from '.';
 
 type Props = {
     item: MenuItemProps;

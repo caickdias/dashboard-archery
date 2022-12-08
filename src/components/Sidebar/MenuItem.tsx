@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { FiChevronRight } from 'react-icons/fi';
 
-import { MenuItemProps } from './Sidebar';
+import { MenuItemProps } from '.';
 
 type Props = {
     item: MenuItemProps;
